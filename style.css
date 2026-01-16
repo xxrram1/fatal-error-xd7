@@ -1,0 +1,99 @@
+/* Reset & Base Fonts */
+body {
+    margin: 0;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden; /* ห้ามเลื่อนหนี */
+}
+
+/* ============ Generator Style (หน้าคนสร้าง - เรียบๆพอ) ============ */
+.container { display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; }
+.card { background: #1a1a1a; padding: 30px; border: 1px solid #333; border-radius: 8px; text-align: center; width: 90%; max-width: 400px; }
+.title { color: #ff0000; font-size: 2.5rem; margin: 0; text-shadow: 0 0 10px red; }
+.subtitle { color: #666; margin-bottom: 20px; }
+input { width: 100%; padding: 12px; background: #000; border: 1px solid #444; color: #00ff00; margin-bottom: 10px; box-sizing: border-box; font-family: monospace; }
+button { width: 100%; padding: 12px; background: #990000; border: none; color: #fff; font-weight: bold; cursor: pointer; transition: 0.2s; }
+button:hover { background: #ff0000; }
+.result-box { margin-top: 15px; display: flex; gap: 5px; }
+.copy-btn { width: auto; background: #333; }
+
+
+/* ============ Prank Style (หน้าเหยื่อ - จัดเต็ม) ============ */
+#prankOverlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ซ่อนเมาส์!!! */
+    cursor: none; 
+    /* พื้นหลังกระพริบแดง-ดำ */
+    animation: bgStrobe 0.1s infinite; 
+}
+
+/* จอซ่า (TV Static Effect) */
+.static-noise {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAG1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2K6UvAAAACHRSTlMvLi4vLi4vL4IphCgAAACFSURBVDjLzZCxDQAxCEMH1wnIBk7g/qv8g2gCqfQkP47t2G7W7t317t11t1337t11795d9+7ddW99t3V3Xffd7t1d9+7ddbddd91337t19+7ddbddd91333u37u7dddd9991t1717d927d9fd7t17997ddbddd93u3Xv33t11t9279969N+4A51c5a05366UAAAAASUVORK5CYII=');
+    opacity: 0.15;
+    pointer-events: none;
+    animation: noiseAnim 0.2s infinite linear;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    border: 5px solid red;
+    background: rgba(0,0,0,0.8);
+    /* ภาพรวมสั่นตลอดเวลา */
+    animation: shakeHard 0.2s infinite;
+}
+
+/* หัวข้อสยอง */
+.glitch-header {
+    font-family: 'Creepster', cursive;
+    font-size: 4rem;
+    color: red;
+    text-shadow: 3px 0 blue, -3px 0 green;
+    margin: 0;
+    animation: glitchSkew 0.5s infinite linear alternate-reverse;
+}
+
+.blink-red { color: #ff0000; animation: blinkFast 0.3s infinite; font-size: 2rem; }
+
+.info-terminal { text-align: left; margin-top: 30px; font-size: 1.1rem; }
+.scary-data-box { border: 1px dashed red; padding: 15px; margin: 15px 0; background: rgba(50,0,0,0.3); }
+
+.highlight { color: #00ff00; }
+.red-text { color: #ff0000; font-weight: bold; }
+
+#countdownBox {
+    font-size: 2rem; color: red; margin-top: 30px; font-weight: bold;
+}
+#countdownNumber { font-size: 5rem; display: block; animation: pulseScale 0.5s infinite; }
+
+
+/* ============ Animations ============ */
+@keyframes bgStrobe { 0% { background: #000; } 50% { background: #330000; } 100% { background: #000; } }
+@keyframes blinkFast { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes noiseAnim { 0% { background-position: 0 0; } 100% { background-position: 100px 100px; } }
+@keyframes pulseScale { 0% { transform: scale(1); } 50% { transform: scale(1.2); color: #fff; } 100% { transform: scale(1); } }
+@keyframes shakeHard {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

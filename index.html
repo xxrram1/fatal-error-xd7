@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 ERROR</title> <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" id="generatorPage">
+        <div class="card">
+            <h1 class="title" style="font-family: 'Creepster', cursive; letter-spacing: 2px;">KILLER LINK V.3</h1>
+            <p class="subtitle">สร้างลิงก์หลอน (เวอร์ชันตัด IP เพิ่มความสด)</p>
+            <div class="input-group">
+                <input type="text" id="originalUrl" placeholder="แปะลิงก์ปลายทางที่นี่..." autocomplete="off">
+            </div>
+            <button id="generateBtn" onclick="generateLink()">สร้างลิงก์สยอง</button>
+            <div class="result-box" id="resultBox" style="display: none;">
+                <input type="text" id="creepyOutput" readonly>
+                <button class="copy-btn" onclick="copyToClipboard()">COPY</button>
+            </div>
+            <p style="color: #555; font-size: 0.8rem; margin-top: 10px;">*ต้องเอาขึ้น Server (Vercel/Netlify) ถึงจะเนียน</p>
+        </div>
+    </div>
+
+
+    <div id="prankOverlay" style="display: none;">
+        <div class="static-noise"></div>
+        
+        <div class="overlay-content">
+            <h1 class="glitch-header">SYSTEM FAILURE</h1>
+            <h2 class="blink-red">CRITICAL BREACH DETECTED</h2>
+            
+            <div class="info-terminal">
+                <p class="typing">> INTRUSION ATTEMPT DETECTED...</p>
+                <p class="typing">> BYPASSING FIREWALL...</p>
+                
+                <div class="scary-data-box">
+                    <p>TARGET DEVICE: <span id="deviceInfo" class="highlight">SCANNING...</span></p>
+                    <p>POWER SOURCE: <span id="batteryLevel" class="highlight red-text">ANALYZING...</span></p>
+                    <p>GPS TRIANGULATION: <span class="highlight">LOCKED ON SIGNAL</span></p>
+                </div>
+
+                <p class="typing red-text">> DOWNLOADING PERSONAL PHOTOS (0%...)</p>
+                <p class="typing red-text">> ACCESSING MIC & CAMERA...</p>
+            </div>
+
+            <div id="countdownBox">
+                DEVICE DESTRUCTION IN <br>
+                <span id="countdownNumber">5</span>
+            </div>
+        </div>
+        
+        <audio id="alarmSound" loop preload="auto">
+             <source src="https://www.soundjay.com/mechanical/sounds/smoke-detector-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
